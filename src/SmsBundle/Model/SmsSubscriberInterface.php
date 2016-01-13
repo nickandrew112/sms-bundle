@@ -1,0 +1,28 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: joe
+ * Date: 13.01.16
+ * Time: 20:41
+ */
+namespace SmsBundle\Model;
+/**
+ * Интерфейс абонента
+ * Interface SmsSubscriberInterface
+ * @package SmsBundle\Model
+ */
+interface SmsSubscriberInterface {
+    /**
+     * Возвращает имя абонента
+     * @return string
+     */
+    public function getName();
+
+    /**
+     * Устанавливаем имя абонента
+     * @param $name
+     * @return SmsSubscriberInterface
+     */
+    public function setName( $name );
+
+}
