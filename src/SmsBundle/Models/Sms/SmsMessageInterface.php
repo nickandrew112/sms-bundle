@@ -53,10 +53,10 @@ interface SmsMessageInterface {
 
     /**
      * Устанавливаем текст сообщения
-     * @param $date
+     * @param $time
      * @return SmsMessageInterface
      */
-    public function setTime( \DateTime $date );
+    public function setTime( \DateTime $time );
 
     /**
      * Возвращаем тект сообщения
