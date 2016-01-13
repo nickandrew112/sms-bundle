@@ -5,7 +5,7 @@
  * Date: 13.01.16
  * Time: 20:41
  */
-namespace SmsBundle\Model;
+namespace SmsBundle\Model\Sms;
 /**
  * Интерфейс абонента
  * Interface SmsSubscriberInterface
