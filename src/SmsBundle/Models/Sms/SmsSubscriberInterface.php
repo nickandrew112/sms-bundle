@@ -25,4 +25,16 @@ interface SmsSubscriberInterface {
      */
     public function setName( $name );
 
+    /**
+     * Возвращаем телефон абонента
+     * @return string
+     */
+    public function getPhone();
+
+    /**
+     * Устанавливаем телефон абонента
+     * @param $phone
+     * @return SmsSubscriberInterface
+     */
+    public function setPhone( $phone );
 }
