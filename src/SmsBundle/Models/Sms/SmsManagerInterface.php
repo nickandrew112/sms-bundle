@@ -22,6 +22,12 @@ interface SmsManagerInterface {
     public function setMessage( SmsMessageInterface $sms );
 
     /**
+     * Возвращаем объект смс сообщения
+     * @return SmsMessageInterface
+     */
+    public function getMessage();
+
+    /**
      * Отправляем сообщение
      * @return SmsManagerInterface
      */
