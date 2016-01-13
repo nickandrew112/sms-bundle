@@ -15,7 +15,7 @@ interface SmsMessageInterface {
     /**
      * Устанавливаем абонента, которому мы отправляем смс
      * @param SmsSubscriberInterface $recipient
-     * @return mixed
+     * @return SmsMessageInterface
      */
     public function setRecipient( SmsSubscriberInterface $recipient  );
 
@@ -28,7 +28,7 @@ interface SmsMessageInterface {
     /**
      * Устанавливаем абонента, отправителя
      * @param SmsSubscriberInterface $sender
-     * @return mixed
+     * @return SmsMessageInterface
      */
     public function setSender( SmsSubscriberInterface $sender  );
 
@@ -41,7 +41,7 @@ interface SmsMessageInterface {
     /**
      * Устанавливаем текст сообщения
      * @param $text
-     * @return SmsSubscriberInterface
+     * @return SmsMessageInterface
      */
     public function setText( $text );
 
@@ -54,7 +54,7 @@ interface SmsMessageInterface {
     /**
      * Устанавливаем текст сообщения
      * @param $date
-     * @return SmsSubscriberInterface
+     * @return SmsMessageInterface
      */
     public function setTime( \DateTime $date );
 
