@@ -16,6 +16,8 @@ abstract class AbstractSmsManager implements SmsManagerInterface {
      */
     protected $smsMessage ;
 
+    abstract public function __construct(array $config);
+
     /**
      * Устанавливаем объект смс сообщения
      * @param SmsMessageInterface $sms
