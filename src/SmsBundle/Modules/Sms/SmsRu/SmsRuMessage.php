@@ -7,8 +7,8 @@
  */
 namespace SmsBundle\Modules\Sms\SmsRu ;
 
+
 use SmsBundle\Model\Sms\AbstractClasses\AbstractSmsMessage;
-use SmsBundle\Model\Sms\SmsSubscriberInterface;
 
 class SmsRuMessage extends AbstractSmsMessage {
 

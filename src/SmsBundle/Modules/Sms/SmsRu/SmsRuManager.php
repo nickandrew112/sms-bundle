@@ -8,9 +8,8 @@
 namespace SmsBundle\Modules\Sms\SmsRu ;
 
 
-use SmsBundle\Model\Sms\AbstractClasses\AbstractSmsManager;
-use SmsBundle\Model\Sms\SmsManagerInterface;
-use SmsBundle\Model\Sms\SmsSubscriberInterface;
+use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsManager;
+use SmsBundle\Modules\Sms\SmsManagerInterface;
 
 class SmsRuManager extends AbstractSmsManager
 {
