@@ -5,10 +5,10 @@
  * Date: 13.01.16
  * Time: 21:58
  */
-namespace SmsBundle\Model\Sms\AbstractClasses ;
+namespace SmsBundle\Modules\Sms\AbstractClasses ;
 
-use SmsBundle\Model\Sms\SmsManagerInterface;
-use SmsBundle\Model\Sms\SmsMessageInterface;
+use SmsBundle\Modules\Sms\SmsManagerInterface;
+use SmsBundle\Modules\Sms\SmsMessageInterface;
 
 abstract class AbstractSmsManager implements SmsManagerInterface {
     /**

@@ -8,8 +8,8 @@
 namespace SmsBundle\Model\Sms\AbstractClasses ;
 
 
-use SmsBundle\Model\Sms\SmsMessageInterface;
-use SmsBundle\Model\Sms\SmsSubscriberInterface;
+use SmsBundle\Modules\Sms\SmsMessageInterface;
+use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
 abstract class AbstractSmsMessage implements SmsMessageInterface {
     /**

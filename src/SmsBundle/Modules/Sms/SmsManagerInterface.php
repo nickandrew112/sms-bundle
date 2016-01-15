@@ -6,7 +6,7 @@
  * Time: 20:51
  */
 
-namespace SmsBundle\Model\Sms;
+namespace SmsBundle\Modules\Sms;
 
 /**
  * Интерфейс для менеджера

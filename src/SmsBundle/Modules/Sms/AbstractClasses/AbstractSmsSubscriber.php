@@ -7,7 +7,7 @@
  */
 namespace SmsBundle\Model\Sms\AbstractClasses ;
 
-use SmsBundle\Model\Sms\SmsSubscriberInterface;
+use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
 abstract class AbstractSmsSubscriber implements  SmsSubscriberInterface {
     /**

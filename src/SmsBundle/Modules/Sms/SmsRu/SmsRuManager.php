@@ -5,7 +5,7 @@
  * Date: 13.01.16
  * Time: 21:53
  */
-namespace SmsBundle\Model\Sms\SmsRu ;
+namespace SmsBundle\Modules\Sms\SmsRu ;
 
 
 use SmsBundle\Model\Sms\AbstractClasses\AbstractSmsManager;

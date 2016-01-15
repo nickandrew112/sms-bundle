@@ -6,7 +6,7 @@
  * Time: 22:06
  */
 
-namespace SmsBundle\Model\Sms\SmsRu;
+namespace SmsBundle\Modules\Sms\SmsRu;
 
 
 use SmsBundle\Model\Sms\AbstractClasses\AbstractSmsSubscriber;
