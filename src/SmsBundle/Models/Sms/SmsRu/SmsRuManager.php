@@ -10,8 +10,21 @@ namespace SmsBundle\Model\Sms\SmsRu ;
 
 use SmsBundle\Model\Sms\AbstractClasses\AbstractSmsManager;
 use SmsBundle\Model\Sms\SmsManagerInterface;
+use SmsBundle\Model\Sms\SmsSubscriberInterface;
 
-class SmsRuManager extends AbstractSmsManager {
+class SmsRuManager extends AbstractSmsManager
+{
+	/**
+	 * @var \Zelenin\SmsRu\Api - объект smsru клиента нужен для отправки sms
+	 */
+	protected $smsRuClient;
+
+
+	public function __construct($apiKey)
+	{
+		$this->smsRuClient = new \Zelenin\SmsRu\Api($apiKey);
+	}
+
 
 	/**
 	 * Отправляем сообщение
@@ -19,6 +32,8 @@ class SmsRuManager extends AbstractSmsManager {
 	 */
 	public function send()
 	{
-		// TODO: Implement send() method.
+
 	}
+
+
 }
