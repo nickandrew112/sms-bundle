@@ -1,1 +1,14 @@
-Hello World!
+<html>
+    <head>
+        <meta charset="utf-8" />
+        {% block stylesheets %}
+            {% stylesheets '@SmsBundle/Resources/public/css/*'  %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        <span class="text">Hello World!</span>
+
+    </body>
+</html>
