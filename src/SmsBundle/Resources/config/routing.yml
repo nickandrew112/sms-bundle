@@ -1,3 +1,0 @@
-sms_homepage:
-    path:     /
-    defaults: { _controller: SmsBundle:Default:index }

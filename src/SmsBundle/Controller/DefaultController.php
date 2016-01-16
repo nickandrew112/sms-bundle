@@ -9,6 +9,8 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('SmsBundle:Default:index.html.twig');
+        return $this->render('SmsBundle:Default:index.html.twig',
+                array( 'form'=>'' )
+            );
     }
 }
