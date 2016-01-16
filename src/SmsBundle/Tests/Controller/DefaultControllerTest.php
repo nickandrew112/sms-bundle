@@ -14,11 +14,12 @@ class DefaultControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/test');
-
-        $smsManagerFactory =  $myParams = $client->getKernel()->getContainer()->get('sms.manager.factory' );
+        $container =  $client->getKernel()->getContainer();
+        $smsManagerFactory = $container->get('sms.manager.factory' );
+        $apiKey = $container->getParameter('smsru_config.apiKey');
         $smsManager = $smsManagerFactory->getSmsManagerClass(
             SmsManagerFactory::SMS_RU_MANAGER_TYPE, array(
-                'apiKey'=>'8841450e-65d8-e0f4-55a2-b4879dfdbb1c'
+                'apiKey'=>$apiKey
             )
         );
         $rep = new SmsRuSubscriber();
