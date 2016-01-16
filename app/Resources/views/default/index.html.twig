@@ -1,10 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
     {% stylesheets 'public/css/*'  %}
-         <link rel="stylesheet" href="{{ asset_url }}" />
+         <link rel="stylesheet" href="" />
      {% endstylesheets %}
+{% endblock %}
+{% block javascripts %}
+    <script src='{{ asset('https://www.google.com/recaptcha/api.js') }}'></script>
 {% endblock %}
 
 {% block body %}
 <span class="text">Hello World!</span>
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.To) }}
+    {{ form_row(form.Text) }}
+    {{ form_row(form.Submit) }}
+{{ form_end(form) }}
 {% endblock %}
