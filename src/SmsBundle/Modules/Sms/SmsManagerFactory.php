@@ -26,17 +26,16 @@ class SmsManagerFactory {
      * Все значения type есть в данном классе в именнованных константах
      * @param int $type
      * @param array $config - массив, содержащий конфигурцию данного sms сервиса
-     * @return SmsManagerInterface | null
+     * @return SmsManagerInterface
      */
     public function getSmsManagerClass( $type, array $config )
     {
         switch( $type )
         {
             case self::SMS_RU_MANAGER_TYPE:
+            default:
                 return new SmsRuManager( $config );
             break;
-            default:
-                return null;
         }
     }
 }

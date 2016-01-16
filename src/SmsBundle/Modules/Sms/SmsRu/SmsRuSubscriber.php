@@ -10,7 +10,7 @@ namespace SmsBundle\Modules\Sms\SmsRu;
 
 
 
-use SmsBundle\Model\Sms\AbstractClasses\AbstractSmsSubscriber;
+use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsSubscriber;
 
 class SmsRuSubscriber extends AbstractSmsSubscriber{
 

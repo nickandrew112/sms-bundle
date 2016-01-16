@@ -21,7 +21,8 @@ class SmsRuManager extends AbstractSmsManager
 
 	public function __construct(array $config)
 	{
-		$this->smsRuClient = new \Zelenin\SmsRu\Api($config['apiKey']);
+        $apiAuth = new \Zelenin\SmsRu\Auth\ApiIdAuth( $config['apiKey'] );
+		$this->smsRuClient = new \Zelenin\SmsRu\Api( $apiAuth );
 	}
 
 

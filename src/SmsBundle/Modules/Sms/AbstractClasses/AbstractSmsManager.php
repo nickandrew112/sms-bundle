@@ -26,6 +26,7 @@ abstract class AbstractSmsManager implements SmsManagerInterface {
     public function setMessage( SmsMessageInterface $sms )
     {
         $this->smsMessage = $sms;
+        return $this;
     }
 
     /**
