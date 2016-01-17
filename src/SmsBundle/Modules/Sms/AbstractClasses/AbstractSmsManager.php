@@ -18,7 +18,7 @@ abstract class AbstractSmsManager implements SmsManagerInterface {
 
     public function __construct(array $config)
     {
-        $this->smsMessage = null ;
+        $this->smsMessage = $this->createMessage() ;
     }
 
     /**
@@ -43,16 +43,17 @@ abstract class AbstractSmsManager implements SmsManagerInterface {
 
     protected function isMessageValid()
     {
-       if(  $this->smsMessage != null )
+       if( $this->smsMessage->getText() != null )
        {
-           if( $this->smsMessage->getText() != null )
-           {
-               if( $this->smsMessage->getRecipient() != null )
-               {
-                   return true ;
-               }
-           }
+            if( $this->smsMessage->getRecipient() != null )
+            {
+                 return true ;
+            }
        }
+
        return false ;
     }
+
+    abstract protected function createMessage();
+    abstract protected function createSubscriber();
 }

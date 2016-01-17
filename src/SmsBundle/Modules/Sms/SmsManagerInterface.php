@@ -32,16 +32,4 @@ interface SmsManagerInterface {
      * @return SmsManagerInterface
      */
     public function send();
-
-    /**
-     * Возвращает новый объект сообщения
-     * @return SmsMessageInterface
-     */
-    public function createMessage();
-
-    /**
-     * Создает объект абонента
-     * @return SmsSubscriberInterface
-     */
-    public function createSubscriber();
 }

@@ -59,7 +59,7 @@ class IqSmsManager extends AbstractSmsManager{
      * Возвращает новый объект сообщения
      * @return SmsMessageInterface
      */
-    public function createMessage()
+    protected function createMessage()
     {
         return new IqSmsMessage();
     }
@@ -68,7 +68,7 @@ class IqSmsManager extends AbstractSmsManager{
      * Создает объект абонента
      * @return SmsSubscriberInterface
      */
-    public function createSubscriber()
+    protected function createSubscriber()
     {
         return new IqSmsSubscriber();
     }

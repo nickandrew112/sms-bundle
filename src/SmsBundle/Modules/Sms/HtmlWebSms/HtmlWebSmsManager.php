@@ -14,6 +14,12 @@ use SmsBundle\Modules\Sms\SmsMessageInterface;
 use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
 class HtmlWebSmsManager extends AbstractSmsManager {
+    public function __construct(array $config)
+    {
+        parent::__construct($config);
+        $sender = $this->createSubscriber()->setPhone( $config['from'] );
+        $this->smsMessage->setSender($sender);
+    }
 
     /**
      * Отправляем сообщение
@@ -30,7 +36,7 @@ class HtmlWebSmsManager extends AbstractSmsManager {
      * Возвращает новый объект сообщения
      * @return SmsMessageInterface
      */
-    public function createMessage()
+    protected function createMessage()
     {
         return new HtmlWebSmsMessage();
     }
@@ -39,7 +45,7 @@ class HtmlWebSmsManager extends AbstractSmsManager {
      * Создает объект абонента
      * @return SmsSubscriberInterface
      */
-    public function createSubscriber()
+    protected function createSubscriber()
     {
         return new HtmlWebSmsSubscriber();
     }
