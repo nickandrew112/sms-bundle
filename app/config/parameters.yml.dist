@@ -17,8 +17,11 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
-    smsru_config:
-           apiKey: 'YOUR_API_KEY_IN_SMS_RU'
-    iqsms_config:
-            apiLogin: 'YOUR_LOGIN'
-            apiPassword: 'YOUR_PASSWORD'
+    sms_configs:
+        smsru_config:
+               apiKey: 'YOUR_API_KEY_IN_SMS_RU'
+        iqsms_config:
+                apiLogin: 'YOUR_LOGIN'
+                apiPassword: 'YOUR_PASSWORD'
+        htmlweb_config:
+                from : 'phone_from'

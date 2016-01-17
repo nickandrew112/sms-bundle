@@ -2,8 +2,7 @@
 
 namespace SmsBundle\Tests\Controller;
 
-use SmsBundle\Modules\Sms\SmsRu\SmsRuMessage;
-use SmsBundle\Modules\Sms\SmsRu\SmsRuSubscriber;
+use SmsBundle\Modules\Sms\SmsManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use SmsBundle\Modules\Sms\SmsManagerFactory;
 
@@ -16,12 +15,14 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
         $container =  $client->getKernel()->getContainer();
         $smsManagerFactory = $container->get('sms.manager.factory' );
-//        $apiConfig = $container->getParameter('smsru_config');
-        $apiConfig = $container->getParameter('iqsms_config');
-        $typeManager = SmsManagerFactory::IQ_SMS_MANAGER_TYPE;
+        $apiConfig = $container->getParameter('sms_configs');
+        $typeManager = SmsManagerFactory::SMS_RU_MANAGER_TYPE;
+        /**
+         * @var SmsManagerInterface  $smsManager
+         */
         $smsManager = $smsManagerFactory->getSmsManagerClass( $typeManager , $apiConfig );
         $rep = $smsManager->createSubscriber();
-        $rep->setPhone( '79215964925' );
+        $rep->setPhone( '79218648104' );
         $sms = $smsManager->createMessage();
         $sms->setText( 'aaabbbb' )->setRecipient( $rep );
         $smsManager->setMessage( $sms )->send();
