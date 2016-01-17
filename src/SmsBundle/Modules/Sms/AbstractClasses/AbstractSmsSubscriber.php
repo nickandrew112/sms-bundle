@@ -59,4 +59,16 @@ abstract class AbstractSmsSubscriber implements  SmsSubscriberInterface {
         $this->phone = $phone;
         return $this;
     }
+
+    /**
+     * Конвертирует сущность в массив
+     * @return array
+     */
+    public function toArray()
+    {
+        $array = array();
+        $array['phone'] = $this->getPhone();
+        $array['name'] = $this->getName();
+        return $array;
+    }
 }
