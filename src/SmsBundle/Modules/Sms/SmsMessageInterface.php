@@ -64,10 +64,5 @@ interface SmsMessageInterface {
      */
     public function getTime();
 
-    /**
-     * Конвертирует сущность в массив
-     * @return array
-     */
-    public function toArray();
 
 }

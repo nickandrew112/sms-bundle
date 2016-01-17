@@ -38,9 +38,4 @@ interface SmsSubscriberInterface {
      */
     public function setPhone( $phone );
 
-    /**
-     * Конвертирует сущность в массив
-     * @return array
-     */
-    public function toArray();
 }

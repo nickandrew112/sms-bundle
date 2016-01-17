@@ -117,19 +117,4 @@ abstract class AbstractSmsMessage implements SmsMessageInterface {
         return $this->time;
     }
 
-    public function toArray()
-    {
-        $array = array();
-        $array['text'] = $this->getText();
-        $array['time'] = $this->getTime();
-        $sender = $this->getSender();
-        if( $sender !== null ) {
-            $array['sender'] = $sender->toArray();
-        }
-        $recipient =  $this->getRecipient();
-        if( $recipient !== null ) {
-            $array['recipient'] = $recipient->toArray();
-        }
-        return $array;
-    }
 }

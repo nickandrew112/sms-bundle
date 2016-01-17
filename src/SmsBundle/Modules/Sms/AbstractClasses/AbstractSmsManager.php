@@ -43,6 +43,16 @@ abstract class AbstractSmsManager implements SmsManagerInterface {
 
     protected function isMessageValid()
     {
-        return $this->smsMessage == null;
+       if(  $this->smsMessage != null )
+       {
+           if( $this->smsMessage->getText() != null )
+           {
+               if( $this->smsMessage->getRecipient() != null )
+               {
+                   return true ;
+               }
+           }
+       }
+       return false ;
     }
 }

@@ -32,10 +32,12 @@ class SmsRuManager extends AbstractSmsManager
 	 */
 	public function send()
 	{
-        $message = $this->getMessage();
-        $phone = $message->getRecipient()->getPhone();
-        $sms = new \Zelenin\SmsRu\Entity\Sms( $phone , $message->getText()  );
-        $this->smsRuClient->smsSend( $sms );
+        if( $this->isMessageValid() ) {
+            $message = $this->getMessage();
+            $phone = $message->getRecipient()->getPhone();
+            $sms = new \Zelenin\SmsRu\Entity\Sms($phone, $message->getText());
+            $this->smsRuClient->smsSend($sms);
+        }
 	}
 
 

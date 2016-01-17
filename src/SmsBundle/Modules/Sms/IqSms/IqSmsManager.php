@@ -13,16 +13,29 @@ use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsManager;
 use SmsBundle\Modules\Sms\SmsManagerInterface;
 
 class IqSmsManager extends AbstractSmsManager{
+    const DEFAULT_QUEUE_NAME = 'testQueue';
     /**
      * @var \iqsms_json
      */
     protected $iqSmsObject ;
+    /**
+     * @var string $queueName - имя очереди, используется для отслеживания
+     * смс в данном сервисе
+     */
+    protected $queueName ;
 
     public function __construct(array $config)
     {
         parent::__construct( $config );
         $this->iqSmsObject = new \iqsms_json( $config['apiLogin'], $config['apiPassword'] );
-        // TODO: Implement __construct() method.
+        if( isset( $config['queueName'] ) )
+        {
+            $this->queueName =  $config['queueName'];
+        }
+        else
+        {
+            $this->queueName = self::DEFAULT_QUEUE_NAME;
+        }
     }
 
     /**
@@ -31,7 +44,12 @@ class IqSmsManager extends AbstractSmsManager{
      */
     public function send()
     {
-        $messageArray = $this->getMessage()->toArray();
-        $this->iqSmsObject->send( $messageArray );
+        if( $this->isMessageValid() ) {
+            $messageArray = array(
+                'phone' => $this->smsMessage->getRecipient()->getPhone(),
+                'text' => $this->smsMessage->getText()
+            );
+            $this->iqSmsObject->send($messageArray, $this->queueName);
+        }
     }
 }
