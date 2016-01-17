@@ -47,11 +47,10 @@ class ProstorManager extends AbstractSmsManager {
         if( $this->isMessageValid() )
         {
             $requestParamArray = array(
-                'phone'=>$this->smsMessage->getRecipient()->getName(),
+                'phone'=>$this->smsMessage->getRecipient()->getPhone(),
                 'text'=>$this->smsMessage->getText(),
                 'login'=>$this->apiLogin,
                 'password'=>$this->apiPassword
-
             );
             $ch = curl_init();
             $requestUrl = "http://gate.prostor-sms.ru/send/?" . http_build_query( $requestParamArray );
