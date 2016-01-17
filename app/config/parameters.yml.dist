@@ -29,3 +29,6 @@ parameters:
                 apiPassword: 'YOUR_PASSWORD(required)'
                 name : 'SENDER_NAME'
                 phone : 'SENDER_PHONE'
+        prostor_config:
+                apiLogin: 'YOUR_LOGIN(required)'
+                apiPassword: 'YOUR_PASSWORD(required)'
