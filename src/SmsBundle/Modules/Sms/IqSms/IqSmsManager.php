@@ -11,6 +11,8 @@ namespace SmsBundle\Modules\Sms\IqSms;
 
 use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsManager;
 use SmsBundle\Modules\Sms\SmsManagerInterface;
+use SmsBundle\Modules\Sms\SmsMessageInterface;
+use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
 class IqSmsManager extends AbstractSmsManager{
     const DEFAULT_QUEUE_NAME = 'testQueue';
@@ -51,5 +53,23 @@ class IqSmsManager extends AbstractSmsManager{
             );
             $this->iqSmsObject->send($messageArray, $this->queueName);
         }
+    }
+
+    /**
+     * Возвращает новый объект сообщения
+     * @return SmsMessageInterface
+     */
+    public function createMessage()
+    {
+        return new IqSmsMessage();
+    }
+
+    /**
+     * Создает объект абонента
+     * @return SmsSubscriberInterface
+     */
+    public function createSubscriber()
+    {
+        return new IqSmsSubscriber();
     }
 }

@@ -10,6 +10,8 @@ namespace SmsBundle\Modules\Sms\SmsRu ;
 
 use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsManager;
 use SmsBundle\Modules\Sms\SmsManagerInterface;
+use SmsBundle\Modules\Sms\SmsMessageInterface;
+use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
 class SmsRuManager extends AbstractSmsManager
 {
@@ -41,4 +43,21 @@ class SmsRuManager extends AbstractSmsManager
 	}
 
 
+    /**
+     * Возвращает новый объект сообщения
+     * @return SmsMessageInterface
+     */
+    public function createMessage()
+    {
+        return new SmsRuMessage();
+    }
+
+    /**
+     * Создает объект абонента
+     * @return SmsSubscriberInterface
+     */
+    public function createSubscriber()
+    {
+        return new SmsRuSubscriber();
+    }
 }

@@ -20,9 +20,9 @@ class DefaultControllerTest extends WebTestCase
         $apiConfig = $container->getParameter('iqsms_config');
         $typeManager = SmsManagerFactory::IQ_SMS_MANAGER_TYPE;
         $smsManager = $smsManagerFactory->getSmsManagerClass( $typeManager , $apiConfig );
-        $rep = new SmsRuSubscriber();
+        $rep = $smsManager->createSubscriber();
         $rep->setPhone( '79215964925' );
-        $sms = new SmsRuMessage();
+        $sms = $smsManager->createMessage();
         $sms->setText( 'aaabbbb' )->setRecipient( $rep );
         $smsManager->setMessage( $sms )->send();
 
