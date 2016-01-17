@@ -9,8 +9,11 @@
 namespace SmsBundle\Modules\Sms;
 
 
+use SmsBundle\Modules\Sms\Epochta\EpochtaSmsManager;
 use SmsBundle\Modules\Sms\HtmlWebSms\HtmlWebSmsManager;
 use SmsBundle\Modules\Sms\IqSms\IqSmsManager;
+use SmsBundle\Modules\Sms\Profisend\ProfisendManager;
+use SmsBundle\Modules\Sms\SmsApiRu\SmsApiRuManager;
 use SmsBundle\Modules\Sms\SmsRu\SmsRuManager;
 
 class SmsManagerFactory {
@@ -27,10 +30,10 @@ class SmsManagerFactory {
      */
     const IQ_SMS_MANAGER_TYPE = 2;
     /**
-     * @const HTML_WEB_SMS_MANAGER_TYPE - менеджер для сайта htmlweb.ru
+     * @const  PROFISEND_RU_MANAGER_TYPE  - менеджер для сайта profisend.ru
      (
      */
-    const HTML_WEB_SMS_MANAGER_TYPE = 3;
+    const PROFISEND_RU_MANAGER_TYPE = 3;
 
     /**
      * Возвращает sms менеджер в зависимости от type
@@ -46,9 +49,7 @@ class SmsManagerFactory {
             case self::IQ_SMS_MANAGER_TYPE:
                 return new IqSmsManager( $config['iqsms_config'] );
                 break;
-            case self::HTML_WEB_SMS_MANAGER_TYPE:
-                return new HtmlWebSmsManager( $config['htmlweb_config'] );
-                break;
+
             case self::SMS_RU_MANAGER_TYPE:
             default:
                 return new SmsRuManager( $config['smsru_config'] );

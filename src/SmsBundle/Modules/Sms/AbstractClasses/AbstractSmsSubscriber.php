@@ -18,12 +18,18 @@ abstract class AbstractSmsSubscriber implements  SmsSubscriberInterface {
      * @var string телефон абонента
      */
     protected $phone ;
+
+
+    public function __construct()
+    {
+        $this->phone = null;
+        $this->name = null;
+    }
+
     /**
      * Возвращает имя абонента
      * @return string
      */
-
-
     public function getName()
     {
         return $this->name ;

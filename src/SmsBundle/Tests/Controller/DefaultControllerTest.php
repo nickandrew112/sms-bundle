@@ -16,16 +16,16 @@ class DefaultControllerTest extends WebTestCase
         $container =  $client->getKernel()->getContainer();
         $smsManagerFactory = $container->get('sms.manager.factory' );
         $apiConfig = $container->getParameter('sms_configs');
-        $typeManager = SmsManagerFactory::SMS_RU_MANAGER_TYPE;
+        $typeManager = SmsManagerFactory::PROFISEND_RU_MANAGER_TYPE;
         /**
          * @var SmsManagerInterface  $smsManager
          */
         $smsManager = $smsManagerFactory->getSmsManagerClass( $typeManager , $apiConfig );
-        $rep = $smsManager->createSubscriber();
+        $message = $smsManager->getMessage();
+        $rep = $message->getRecipient();
         $rep->setPhone( '79218648104' );
-        $sms = $smsManager->createMessage();
-        $sms->setText( 'aaabbbb' )->setRecipient( $rep );
-        $smsManager->setMessage( $sms )->send();
+        $message->setText( 'aaabbbb' )->setRecipient( $rep );
+        $smsManager->setMessage( $message )->send();
 
         //$this->assertContains('Hello World', $client->getResponse()->getContent());
     }

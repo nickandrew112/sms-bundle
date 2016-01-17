@@ -53,12 +53,4 @@ class SmsRuManager extends AbstractSmsManager
         return new SmsRuMessage();
     }
 
-    /**
-     * Создает объект абонента
-     * @return SmsSubscriberInterface
-     */
-    protected function createSubscriber()
-    {
-        return new SmsRuSubscriber();
-    }
 }

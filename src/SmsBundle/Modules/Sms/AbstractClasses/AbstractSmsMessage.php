@@ -33,8 +33,8 @@ abstract class AbstractSmsMessage implements SmsMessageInterface {
 
     public function __construct()
     {
-        $this->recipient = null;
-        $this->sender = null;
+        $this->recipient = $this->createSubscriber();
+        $this->sender = $this->createSubscriber();
     }
 
     /**
@@ -116,5 +116,11 @@ abstract class AbstractSmsMessage implements SmsMessageInterface {
     {
         return $this->time;
     }
+
+    /**
+     * @return SmsSubscriberInterface
+     */
+    abstract protected function createSubscriber();
+
 
 }
