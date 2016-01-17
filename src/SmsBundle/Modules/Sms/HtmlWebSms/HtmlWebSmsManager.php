@@ -8,6 +8,8 @@
 
 namespace SmsBundle\Modules\Sms\HtmlWebSms;
 
+use Buzz\Client\FileGetContents;
+use Buzz\Message\Request;
 use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsManager;
 use SmsBundle\Modules\Sms\SmsManagerInterface;
 use SmsBundle\Modules\Sms\SmsMessageInterface;
@@ -21,7 +23,9 @@ class HtmlWebSmsManager extends AbstractSmsManager {
      */
     public function send()
     {
-        // TODO: Implement send() method.
+        if( $this->isMessageValid() ) {
+
+        }
     }
 
     /**
