@@ -28,13 +28,20 @@ abstract class AbstractSmsMessage implements SmsMessageInterface {
      * @var \DateTime - время отправки
      */
     protected $time ;
+
+
+
+    public function __construct()
+    {
+        $this->recipient = null;
+        $this->sender = null;
+    }
+
     /**
      * Устанавливаем абонента, которому мы отправляем смс
      * @param SmsSubscriberInterface $recipient
      * @return SmsMessageInterface
      */
-
-
     public function setRecipient(SmsSubscriberInterface $recipient)
     {
        $this->recipient = $recipient;
@@ -115,8 +122,14 @@ abstract class AbstractSmsMessage implements SmsMessageInterface {
         $array = array();
         $array['text'] = $this->getText();
         $array['time'] = $this->getTime();
-        $array['sender'] = $this->getSender()->toArray();
-        $array['recipient'] = $this->getRecipient()->toArray();
+        $sender = $this->getSender();
+        if( $sender !== null ) {
+            $array['sender'] = $sender->toArray();
+        }
+        $recipient =  $this->getRecipient();
+        if( $recipient !== null ) {
+            $array['recipient'] = $recipient->toArray();
+        }
         return $array;
     }
 }

@@ -20,6 +20,7 @@ class IqSmsManager extends AbstractSmsManager{
 
     public function __construct(array $config)
     {
+        parent::__construct( $config );
         $this->iqSmsObject = new \iqsms_json( $config['apiLogin'], $config['apiPassword'] );
         // TODO: Implement __construct() method.
     }

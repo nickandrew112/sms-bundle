@@ -16,7 +16,10 @@ abstract class AbstractSmsManager implements SmsManagerInterface {
      */
     protected $smsMessage ;
 
-    abstract public function __construct(array $config);
+    public function __construct(array $config)
+    {
+        $this->smsMessage = null ;
+    }
 
     /**
      * Устанавливаем объект смс сообщения
@@ -38,4 +41,8 @@ abstract class AbstractSmsManager implements SmsManagerInterface {
         return $this->smsMessage;
     }
 
+    protected function isMessageValid()
+    {
+        return $this->smsMessage == null;
+    }
 }

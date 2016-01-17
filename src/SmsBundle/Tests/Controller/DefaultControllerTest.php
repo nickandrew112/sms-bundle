@@ -9,23 +9,24 @@ use SmsBundle\Modules\Sms\SmsManagerFactory;
 
 class DefaultControllerTest extends WebTestCase
 {
-    public function testIndex()
+    public function testSmsRu()
     {
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/');
         $container =  $client->getKernel()->getContainer();
         $smsManagerFactory = $container->get('sms.manager.factory' );
-        $apiConfig = $container->getParameter('smsru_config');
-        $smsManager = $smsManagerFactory->getSmsManagerClass(
-            SmsManagerFactory::SMS_RU_MANAGER_TYPE, $apiConfig
-        );
+//        $apiConfig = $container->getParameter('smsru_config');
+        $apiConfig = $container->getParameter('iqsms_config');
+        $typeManager = SmsManagerFactory::IQ_SMS_MANAGER_TYPE;
+        $smsManager = $smsManagerFactory->getSmsManagerClass( $typeManager , $apiConfig );
         $rep = new SmsRuSubscriber();
         $rep->setPhone( '89215964925' );
         $sms = new SmsRuMessage();
-        $sms->setText( 'aaa' )->setRecipient( $rep );
+        $sms->setText( 'aaabbbb' )->setRecipient( $rep );
         $smsManager->setMessage( $sms )->send();
 
         //$this->assertContains('Hello World', $client->getResponse()->getContent());
     }
+
 }
