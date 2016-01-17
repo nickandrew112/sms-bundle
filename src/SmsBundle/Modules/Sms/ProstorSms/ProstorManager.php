@@ -54,17 +54,12 @@ class ProstorManager extends AbstractSmsManager {
 
             );
             $ch = curl_init();
-            if (!$ch) {
-                die("Couldn't initialize a cURL handle");
-            }
             $requestUrl = "http://gate.prostor-sms.ru/send/?" . http_build_query( $requestParamArray );
             $ret = curl_setopt($ch, CURLOPT_URL, $requestUrl );
             $ret = curl_setopt($ch, CURLOPT_HEADER,         1);
             $ret = curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-            $ret = curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
+            $ret = curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $ret = curl_setopt($ch, CURLOPT_TIMEOUT,        30);
-
-
             $ret = curl_exec($ch);
         }
     }

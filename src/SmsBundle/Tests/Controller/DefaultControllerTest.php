@@ -16,7 +16,7 @@ class DefaultControllerTest extends WebTestCase
         $container =  $client->getKernel()->getContainer();
         $smsManagerFactory = $container->get('sms.manager.factory' );
         $apiConfig = $container->getParameter('sms_configs');
-        $typeManager = SmsManagerFactory::PROFISEND_RU_MANAGER_TYPE;
+        $typeManager = SmsManagerFactory::PROSTOR_RU_MANAGER_TYPE;
         /**
          * @var SmsManagerInterface  $smsManager
          */
