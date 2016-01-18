@@ -23,7 +23,7 @@ class DefaultControllerTest extends WebTestCase
         $smsManager = $smsManagerFactory->getSmsManagerClass( $typeManager , $apiConfig );
         $message = $smsManager->getMessage();
         $rep = $message->getRecipient();
-        $rep->setPhone( '+79218648104' );
+        $rep->setPhone( '+7123456789' );
         $message->setText( 'aaabbbb' )->setRecipient( $rep );
         $smsManager->setMessage( $message )->send();
 
