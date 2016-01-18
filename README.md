@@ -2,9 +2,10 @@ sms
 ===
 
 This service can send sms from
-1. sms.ru[http://sms.ru]
-2. prostor-sms.ru[http://prostor-sms.ru]
-3. iqsms.ru[http://iqsms.ru]
+
+1. sms.ru [http://sms.ru]
+2. prostor-sms.ru [http://prostor-sms.ru]
+3. iqsms.ru [http://iqsms.ru]
 
 
 Bulding Project
@@ -17,6 +18,7 @@ Bulding Project
 Developers
 ===
 Method for create own class
+
 1. Create Dir In src/SmsBundle/Modules/Sms with your module
 2. Craete 3 classes in this directory, manager, message, subscriber extends it from abstract class
 3. Create you configuration in parametrs.yml( parametrs.yml.dist )
