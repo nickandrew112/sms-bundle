@@ -13,6 +13,10 @@ use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsManager;
 use SmsBundle\Modules\Sms\SmsManagerInterface;
 use SmsBundle\Modules\Sms\SmsMessageInterface;
 
+/**
+ * Class ProstorManager - класс для отправки сообщений с помощью сервиса prostor-sms.ru
+ * @package SmsBundle\Modules\Sms\ProstorSms
+ */
 class ProstorManager extends AbstractSmsManager {
     /**
      * @var string - логин для доступа к апи

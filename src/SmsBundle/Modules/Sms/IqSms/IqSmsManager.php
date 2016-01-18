@@ -14,12 +14,22 @@ use SmsBundle\Modules\Sms\SmsManagerInterface;
 use SmsBundle\Modules\Sms\SmsMessageInterface;
 use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
+/**
+ * Class IqSmsManager - класс для отправки сообщений с помощью сервиса iqsms.ru
+ * @package SmsBundle\Modules\Sms\IqSms
+ */
 class IqSmsManager extends AbstractSmsManager{
-    const DEFAULT_QUEUE_NAME = 'testQueue';
+
     /**
-     * @var \iqsms_json
+     * @const DEFAULT_QUEUE_NAME - название очереди по умолчанию
+     */
+    const DEFAULT_QUEUE_NAME = 'testQueue';
+
+    /**
+     * @var \iqsms_json - объект для упрощенной работы с iqsms.ru
      */
     protected $iqSmsObject ;
+
     /**
      * @var string $queueName - имя очереди, используется для отслеживания
      * смс в данном сервисе
@@ -63,5 +73,4 @@ class IqSmsManager extends AbstractSmsManager{
     {
         return new IqSmsMessage();
     }
-
 }

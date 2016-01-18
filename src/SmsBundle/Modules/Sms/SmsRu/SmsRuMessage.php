@@ -12,6 +12,10 @@ use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsMessage;
 use SmsBundle\Modules\Sms\IqSms\IqSmsSubscriber;
 use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
+/**
+ * Class SmsRuMessage  - класс-сообщение для сервиса sms.ru
+ * @package SmsBundle\Modules\Sms\SmsRu
+ */
 class SmsRuMessage extends AbstractSmsMessage {
 
     /**

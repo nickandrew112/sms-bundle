@@ -12,6 +12,10 @@ namespace SmsBundle\Modules\Sms\SmsRu;
 
 use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsSubscriber;
 
+/**
+ * Class SmsRuSubscriber  класс-абонент для сервиса sms.ru
+ * @package SmsBundle\Modules\Sms\SmsRu
+ */
 class SmsRuSubscriber extends AbstractSmsSubscriber{
 
 }

@@ -12,6 +12,10 @@ namespace SmsBundle\Modules\Sms\IqSms;
 use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsMessage;
 use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
+/**
+ * Class IqSmsMessage - класс-сообщение для сервиса iqsms.ru
+ * @package SmsBundle\Modules\Sms\IqSms
+ */
 class IqSmsMessage extends AbstractSmsMessage {
 
     /**

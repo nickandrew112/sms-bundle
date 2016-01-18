@@ -13,10 +13,14 @@ use SmsBundle\Modules\Sms\SmsManagerInterface;
 use SmsBundle\Modules\Sms\SmsMessageInterface;
 use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
+/**
+ * Class SmsRuManager - класс для отправки сообщений с помощью сервиса sms.ru
+ * @package SmsBundle\Modules\Sms\SmsRu
+ */
 class SmsRuManager extends AbstractSmsManager
 {
 	/**
-	 * @var \Zelenin\SmsRu\Api - объект smsru клиента нужен для отправки sms
+	 * @var \Zelenin\SmsRu\Api - объект smsru клиента, облегчает отправку sms
 	 */
 	protected $smsRuClient;
 

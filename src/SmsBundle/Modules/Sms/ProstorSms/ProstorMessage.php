@@ -12,6 +12,10 @@ namespace SmsBundle\Modules\Sms\ProstorSms;
 use SmsBundle\Modules\Sms\AbstractClasses\AbstractSmsMessage;
 use SmsBundle\Modules\Sms\SmsSubscriberInterface;
 
+/**
+ * Class ProstorMessage - класс-сообщение для prostor-sms.ru
+ * @package SmsBundle\Modules\Sms\ProstorSms
+ */
 class ProstorMessage extends AbstractSmsMessage{
 
     /**
