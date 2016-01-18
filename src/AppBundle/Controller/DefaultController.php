@@ -28,22 +28,18 @@ class DefaultController extends Controller
             $data = $form->getData();
             $phoneValidationRule = new Regex('/((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i');
             $validator = $this->get('validator');
-            var_dump( $data );
             $phone = $data['To'];
             $validationErrors = $validator->validate($phone, $phoneValidationRule);
             if( count($validationErrors) === 0 ) {
-                $smsManagerFactory = $this->get('sms.manager.factory');
-                $apiConfig = $this->getParameter('smsru_config');
-                $smsManager = $smsManagerFactory->getSmsManagerClass(
-                    SmsManagerFactory::SMS_RU_MANAGER_TYPE, $apiConfig
-                );
-                $rep = new SmsRuSubscriber();
-
+                $smsManagerFactory = $this->get('sms.manager.factory' );
+                $apiConfig = $this->getParameter('sms_configs');
+                $typeManager = SmsManagerFactory::PROSTOR_RU_MANAGER_TYPE;
+                $smsManager = $smsManagerFactory->getSmsManagerClass( $typeManager , $apiConfig );
+                $message = $smsManager->getMessage();
+                $rep = $message->getRecipient();
                 $rep->setPhone($phone);
-                $sms = new SmsRuMessage();
-                $sms->setText($data['Text'])
-                    ->setRecipient($rep);
-                $smsManager->setMessage($sms)->send();
+                $message->setText( $data['Text'] )->setRecipient( $rep );
+                $smsManager->setMessage($message)->send();
                 return $this->redirectToRoute('sms_form');
             }
         }
