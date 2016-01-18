@@ -11,7 +11,7 @@ This service can send sms from
 Bulding Project
 ===
 1. clone project
-2. download composer( for example "php -r "readfile('https://getcomposer.org/installer');" | php@ )
+2. download composer( for example "php -r "readfile('https://getcomposer.org/installer');" | php )
 3. php composer.phar install
 3. cp src/SmsBundle/Resources/config/parameters.yml.dist src/SmsBundle/Resources/config/parameters.yml
 4. In src/SmsBundle/Resources/config/parameters.yml create your configuration
