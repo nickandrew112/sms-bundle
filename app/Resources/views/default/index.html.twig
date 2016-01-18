@@ -1,21 +1,18 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-    {% stylesheets 'public/css/*'  %}
-         <link rel="stylesheet" href="" />
-     {% endstylesheets %}
+         <link rel="stylesheet" href="{{  asset("bundles/webshome/css/main.css") }}" />
+
 {% endblock %}
 {% block javascripts %}
-    <script src='{{ asset('https://www.google.com/recaptcha/api.js') }}'></script>
+    <script src='{{ asset('//html5shim.googlecode.com/svn/trunk/html5.js') }}'></script>
 {% endblock %}
 
 {% block body %}
-<span class="text">Hello World!</span>
-{{ form_start(form) }}
-    {{ form_errors(form) }}
 
-    {{ form_row(form.To) }}
-    {{ form_row(form.Text) }}
-    {{ form_row(form.SmsServiceType) }}
-    {{ form_row(form.Submit) }}
-{{ form_end(form) }}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_widget( form ) }}
+    {{ form_end(form) }}
+
 {% endblock %}
+

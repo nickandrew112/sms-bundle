@@ -1,0 +1,17 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    sms_configs:
+        smsru_config:
+               apiKey: 'YOUR_API_KEY_IN_SMS_RU(required)'
+               name : 'SENDER_NAME'
+               phone : 'SENDER_PHONE'
+        iqsms_config:
+                apiLogin: 'YOUR_LOGIN(required)'
+                apiPassword: 'YOUR_PASSWORD(required)'
+                name : 'SENDER_NAME'
+                phone : 'SENDER_PHONE'
+        prostor_config:
+                apiLogin: 'YOUR_LOGIN(required)'
+                apiPassword: 'YOUR_PASSWORD(required)'

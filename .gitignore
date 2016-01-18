@@ -1,4 +1,5 @@
 /app/config/parameters.yml
+src/SmsBundle/Resources/config/parameters.yml
 /build/
 /phpunit.xml
 /var/*
