@@ -33,7 +33,7 @@ class DefaultController extends Controller
             if( count($validationErrors) === 0 ) {
                 $smsManagerFactory = $this->get('sms.manager.factory' );
                 $apiConfig = $this->getParameter('sms_configs');
-                $typeManager = SmsManagerFactory::PROSTOR_RU_MANAGER_TYPE;
+                $typeManager = $data['SmsServiceType'];
                 $smsManager = $smsManagerFactory->getSmsManagerClass( $typeManager , $apiConfig );
                 $message = $smsManager->getMessage();
                 $rep = $message->getRecipient();

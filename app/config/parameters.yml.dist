@@ -17,18 +17,3 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
-    #Value required needs to filed
-    #In some services we need phone sender for example, in some not
-    sms_configs:
-        smsru_config:
-               apiKey: 'YOUR_API_KEY_IN_SMS_RU(required)'
-               name : 'SENDER_NAME'
-               phone : 'SENDER_PHONE'
-        iqsms_config:
-                apiLogin: 'YOUR_LOGIN(required)'
-                apiPassword: 'YOUR_PASSWORD(required)'
-                name : 'SENDER_NAME'
-                phone : 'SENDER_PHONE'
-        prostor_config:
-                apiLogin: 'YOUR_LOGIN(required)'
-                apiPassword: 'YOUR_PASSWORD(required)'
